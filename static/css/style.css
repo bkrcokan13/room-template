@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-gray:hsl(0, 0%, 63%);
+    --black:hsl(0, 0%, 0%);
+    --white:hsl(0, 0%, 100%);
+    --very-dark-gray:hsl(0, 0%, 27%);
+    --league-spartan-font: "League Spartan", sans-serif;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--league-spartan-font);
+}
+
+
+.main-header {
+    height: 70vh;
+    width: 100%;
+}
+
+/* Header Slider */
+    .slider-container {
+        display: flex;
+        height: 100%;
+        width: 100%;
+    }
+
+    .slider-banner, .slider-content {
+        height: 100%;
+    }
+
+    .slider-content {
+        width: 40%;
+    }
+
+    .slider-banner {
+        position: relative;
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        width: 60%;
+        background-image: url("/images/desktop-image-hero-1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+/* Navbar */
+    .banner-navbar {
+        display: flex;
+        align-content: center;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-left: 2rem;
+        padding: 2.5rem;
+    }
+
+
+    #mobile-nav-btn {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: none;
+    }
+
+    .nav-items {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-link {
+        text-decoration: underline;
+        text-underline-offset: 6px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: transparent;
+        color: var(--white);
+        transition: 0.4s ease all;
+    }
+    .nav-link:hover {
+        text-decoration-color: var(--white);
+    }
+
+    .nav-logo {
+        text-decoration: none;
+    }
+
+    /* Slider Mobile Btn */
+    .mobile-slider-buttons {
+        display: none;
+        align-content: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    /* Slider Button */
+
+    .slider-btn {
+        padding: 24px 30px 24px 30px;
+        background-color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s ease-in all;
+    }
+
+    .slider-btn:hover {
+        background-color: var(--dark-gray);
+        transform: scale(1.1);
+    }
+
+    .slider-btn:active {
+        background-color: var(--dark-gray);
+        transform: scale(1.0);
+    }
+    
+
+    .slider-content {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 40%;
+    }
+    .product-detail-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 32px;
+        padding: 6rem;
+    }
+
+    .product-title-field {
+        font-size: 52px;
+        line-break: auto;
+
+    }
+
+    .product-description-field {
+        color: var(--dark-gray);
+        font-size: 16.5px;
+        line-break: auto;
+        line-height: 1.5;
+
+    }
+
+
+    .shop-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--black);
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        font-size: 18px;
+    }
+
+    .slider-btn-content {
+        position: absolute;
+        display: flex;
+        left: 0;
+        bottom: 0;
+    }
+
+
+
+
+/* Mobile Responsive */
+    @media screen and (max-width: 767px) {
+        /* Header */
+        .main-header {
+            height: 100vh;
+        }
+
+        /* Slider */
+        .slider-container {
+            flex-direction: column;
+        }
+
+        .slider-banner, .slider-content {
+            width: 100%;
+        }
+
+        .slider-banner {
+            height: 50%;
+        }
+        .slider-content {
+            height: 50%;
+        }
+
+        /* Navbar */
+        .slider-banner {
+            justify-content: center;
+        }
+        .nav-items {
+            display: none;
+        }
+
+        #mobile-nav-btn {
+            position: absolute;
+            display: inline-block;
+            padding: 0px;
+            left: 0;
+            margin-left: 24px;
+        }
+
+        .mobile-navbar {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+            background-color: var(--white);
+            padding: 50px;
+            top: 0;
+            transition: 0.3s ease transform;
+            z-index: 0;
+        }
+
+        .active {
+            display: flex;
+            right: 0;
+        }
+
+        .disable {
+            display: none;
+            right: -1000px;
+        }
+
+        .mobile-nav-items {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 0.2rem;
+            gap: 1.2rem;
+            list-style: none;
+        }
+
+        .mobile-nav-item:first-child {
+           position: absolute;
+            left: 0;
+            margin-left: 14px;
+        }
+        
+        .slider-btn-content {
+            display: none;
+        }
+        .mobile-slider-buttons {
+            display: flex;
+        }
+
+        .slider-btn {
+            padding: 16px 24px 16px 24px;
+        }
+
+        .slider-btn:hover, .slider-btn:active {
+            background-color: var(--dark-gray);
+            transform: scale(1.0);
+        }
+
+        .product-detail-container {
+            padding: 25px;
+        }
+
+        .product-title-field {
+            font-size: 32px;
+        }
+
+        .product-description-field {
+            font-size: 15px;
+        }
+
+        .shop-btn {
+            font-size: 14px;
+        }
+    }
