@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let galleryIndex = 0;
     const sliderNextBtn = document.getElementById("slider-left-btn");
     const sliderPrevBtn = document.getElementById("slider-right-btn");
+
+    // For Mobile
     const mobileSliderNextBtn = document.getElementById("mobile-slider-left-btn");
     const mobileSliderPrevBtn = document.getElementById("mobile-slider-right-btn");
 
@@ -72,6 +74,20 @@ document.addEventListener('DOMContentLoaded', () => {
         sliderGallery(galleryIndex);
     });
 
+    /* For Mobile Navbar */
+
+    const mobileNavbarBtn = document.getElementById(".mobile-nav-btn");
+    const mobileCloseBtn = document.getElementById(".mobile-close-btn");
+
+    mobileNavbarBtn.addEventListener("click", () => {
+        mobileNavbar(true);
+    }
+
+    );
+    mobileCloseBtn.addEventListener("click", () => {
+        mobileNavbar(false);
+    });
+
     
 });
 
@@ -97,5 +113,24 @@ function sliderGallery(index) {
         currentIndex++;
     } catch(error) {
         console.log(error);
+    }
+}
+
+function mobileNavbar(status) {
+
+    const mobileNavbarContainer = document.querySelector(".mobile-navbar");
+    
+    
+    if(status) {
+        if (mobileNavbarContainer.classList.contains("disable")) {
+            mobileNavbarContainer.classList.remove("disable");
+            mobileNavbarContainer.classList.add("enable");
+        }
+    }
+    else {
+        if (mobileNavbarContainer.classList.contains("enable")) {
+            mobileNavbarContainer.classList.remove("enable");
+            mobileNavbarContainer.classList.add("disable");
+        }
     }
 }
