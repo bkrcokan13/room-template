@@ -76,14 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* For Mobile Navbar */
 
-    const mobileNavbarBtn = document.getElementById(".mobile-nav-btn");
-    const mobileCloseBtn = document.getElementById(".mobile-close-btn");
+    const mobileNavbarBtn = document.getElementById("mobile-nav-btn");
+    const mobileCloseBtn = document.getElementById("mobile-close-btn");
 
     mobileNavbarBtn.addEventListener("click", () => {
         mobileNavbar(true);
-    }
-
-    );
+    });
     mobileCloseBtn.addEventListener("click", () => {
         mobileNavbar(false);
     });
@@ -124,12 +122,12 @@ function mobileNavbar(status) {
     if(status) {
         if (mobileNavbarContainer.classList.contains("disable")) {
             mobileNavbarContainer.classList.remove("disable");
-            mobileNavbarContainer.classList.add("enable");
+            mobileNavbarContainer.classList.add("active");
         }
     }
     else {
-        if (mobileNavbarContainer.classList.contains("enable")) {
-            mobileNavbarContainer.classList.remove("enable");
+        if (mobileNavbarContainer.classList.contains("active")) {
+            mobileNavbarContainer.classList.remove("active");
             mobileNavbarContainer.classList.add("disable");
         }
     }
